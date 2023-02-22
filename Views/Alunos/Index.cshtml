@@ -1,0 +1,40 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="text-center">
+    <h1 class="display-4">Alunos</h1>
+</div>
+<div>
+  <a type="button" class="btn btn-info" id="AdicionarAluno" href="/Alunos/AdicionarAluno">Adicionar Aluno</a>
+</div>
+<h1>@ViewData["Teste"]</h1>
+<table class="table">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Matricula</th>
+      <th scope="col">Notas</th>
+      <th scope="col">Situação</th>
+      <th scope="col"></th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach (var aluno in Model)
+    {  
+      <tr>
+        <th scope="row">@aluno.Id</th>
+        <td>@aluno.Nome</td>
+        <td>@aluno.Matricula</td>
+        <td>@aluno.STRNotas()</td>
+        <td>@aluno.Situacao()</td>
+        <td><a type="button" class="btn btn-secondary" href="/Alunos/EditarAluno/@aluno.Id">Editar</a></td>
+        <td><a type="button" href="/Alunos/@aluno.Id/Excluiraluno" onclick="return confirm('Tem certeza que deseja excluir esse aluno?')" class="btn btn-danger">Exlcuir</a></td>
+      </tr>
+    
+    }   
+  </tbody>
+</table>

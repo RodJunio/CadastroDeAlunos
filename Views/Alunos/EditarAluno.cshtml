@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Editar Aluno";
+}
+<h1>Editar aluno</h1>
+<form action="/EditarAluno" method="post">
+  <div class="form-group">
+    <label for="NomeDoAluno">Id:</label>
+    <input type="text" value="@(ViewBag.Id)" class="form-control" id="IdDoAluno" name="Id" placeholder="Ex.: João das Neves" Readonly>
+  </div>
+  <div class="form-group">
+    <label for="NomeDoAluno">Nome:</label>
+    <input type="text" value="@(ViewBag.Nome)" class="form-control" id="NomeDoAluno" name="Nome" placeholder="Ex.: João das Neves">
+  </div>
+  <div class="form-group">
+    <label for="MatriculaDoAluno">Matricula:</label>
+    <input type="number" value="@(ViewBag.Matricula)" class="form-control" name="Matricula" placeholder="Ex.: 123456">
+  </div>
+  <div class="form-group">
+    <label for="NotasDoAluno">Notas:</label>
+    <input type="number" value="@(ViewBag.Nota)" class="form-control" id="NotasDoAluno" name="Nota" placeholder="Ex.: 4, 6, 8">
+  </div>
+  <button type="submit" class="btn btn-success" id="Salvar" >Salvar</button>
+  <a type="button" class="btn btn-info" id="AdicionarAluno" href="/Alunos">Ir para lista de alunos</a>
+</form>
